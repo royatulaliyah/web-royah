@@ -32,5 +32,13 @@ module.exports = {
     `gatsby-plugin-offline`,
     "gatsby-plugin-postcss",
     `gatsby-plugin-netlify`,
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
+    },
   ],
 }

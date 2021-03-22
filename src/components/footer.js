@@ -5,11 +5,11 @@ import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 
-const FooterContainer = tw.div`text-gray-700 container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row`
+const FooterContainer = tw.div`text-gray-700 container flex flex-col items-center px-8 py-8 sm:flex-row bg-gray-200 min-w-full`
 const RoyahLogoContainer = tw.div`text-xl font-bold leading-none text-gray-900 select-none tracking-tighter`
-const CopyrightContainer = tw.div`mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0`
+const CopyrightContainer = tw.div`mt-4 text-sm text-gray-500 hover:text-gray-800 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-500 sm:mt-0`
 const AccountsContainer = tw.div`inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start`
-const SocialLogo = tw.a`text-gray-400 hover:text-gray-700`
+const SocialLogo = tw.a`text-gray-500 hover:text-gray-800`
 const ScreenReaderOnly = tw.span`sr-only`
 
 const Footer = () => {
@@ -17,11 +17,13 @@ const Footer = () => {
     <FooterContainer>
       <RoyahLogoContainer>
         <Link to="/">
-          Royatul <br /> Aliyah
+          Royah <br /> WebApp
         </Link>
       </RoyahLogoContainer>
 
-      <CopyrightContainer>&copy; 2021 IT Development Team</CopyrightContainer>
+      <CopyrightContainer>
+        &copy; 2021 Royah IT Development Team
+      </CopyrightContainer>
 
       <AccountsContainer>
         <SocialLogo href="/instagram">
