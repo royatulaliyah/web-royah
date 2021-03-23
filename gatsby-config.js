@@ -23,8 +23,8 @@ module.exports = {
         short_name: `Royah`,
         start_url: `/`,
         background_color: `#FFFFFF`,
-        theme_color: `#FFFFFF`,
-        display: `minimal-ui`,
+        theme_color: `#4DC8C6`,
+        display: `standalone`,
         icon: `src/images/royah-icon.png`, // This path is relative to the root of the site.
       },
     },
