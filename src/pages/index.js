@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Logo from "../assets/logo_2.svg"
 import illustration from "../images/teamwork.png"
+import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +19,9 @@ const IndexPage = () => (
           className="mx-auto max-h-72"
         />
         <h1 className="text-4xl mt-4 mb-10 text-center">coming soon!</h1>
+        <p className="text-center">
+          <Link to="keluarga"> &gt; keluarga</Link>
+        </p>
       </div>
     </div>
     <Footer />
