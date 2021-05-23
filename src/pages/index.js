@@ -20,7 +20,8 @@ const IndexPage = () => (
         />
         <h1 className="text-4xl mt-4 mb-10 text-center">coming soon!</h1>
         <p className="text-center">
-          <Link to="keluarga"> &gt; keluarga</Link>
+          <Link to="/"> &gt; year book</Link> <br />
+          <Link to="/keluarga"> &gt; keluarga</Link>
         </p>
       </div>
     </div>

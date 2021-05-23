@@ -27,10 +27,9 @@ const Keluarga = () => {
       <h1>Keluarga Royah</h1>
       {nodeList.map(({ node }) => {
         return (
-          <Link to={`/${node.fields.slug}`}>
-            {" "}
-            &gt; {node.name} <br />{" "}
-          </Link>
+          <div>
+            <Link to={`/${node.fields.slug}`}>&gt; {node.name}</Link>
+          </div>
         )
       })}
       <Link to="/">
