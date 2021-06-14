@@ -3,6 +3,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageheader"
+import { FaFilter } from "@react-icons/all-files/fa/FaFilter"
 
 const Keluarga = () => {
   const data = useStaticQuery(graphql`
@@ -26,12 +27,15 @@ const Keluarga = () => {
     <Layout>
       <SEO title="Keluarga Royah" />
       <PageHeader title="Keluarga Royah" />
-      <div className="mx-auto text-center max-w-screen-sm px-10">
+      <div className="mx-auto text-center max-w-screen-sm px-10 flex">
         <input
           type="text"
           placeholder="cari berdasarkan nama atau absen"
-          className="px-4 py-2 w-full text-center mb-8 shadow rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+          className="px-4 text-gray-500 py-2 w-full text-center mb-8 shadow rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
         />
+        <button className="px-4 text-gray-500 py-2 ml-2 text-center mb-8 shadow rounded-lg focus:outline-none focus:ring-2 focus:border-transparent">
+          <FaFilter />
+        </button>
       </div>
       <div className="mx-auto">
         <div className="w-11/12 flex flex-wrap justify-center lg:px-5 mx-auto">
