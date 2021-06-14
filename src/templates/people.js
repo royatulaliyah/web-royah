@@ -7,6 +7,7 @@ import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaQuoteLeft } from "@react-icons/all-files/fa/FaQuoteLeft"
 import { FaQuoteRight } from "@react-icons/all-files/fa/FaQuoteRight"
 import { GiKite } from "@react-icons/all-files/gi/GiKite"
+import PageHeader from "../components/pageheader"
 
 export const query = graphql`
   query($slug: String!) {
@@ -28,9 +29,10 @@ const People = props => {
   return (
     <Layout>
       <SEO title={data.name} description={data.quotes} />
-      <p className="text-center text-2xl m-4 mt-10">
+      <PageHeader title={data.name} />
+      {/* <p className="text-center text-2xl m-4 mt-10">
         {data.name} ({data.absen})
-      </p>
+      </p> */}
       <table className="mx-auto mt-8 max-w-xs sm:max-w-md">
         <tbody>
           <tr>

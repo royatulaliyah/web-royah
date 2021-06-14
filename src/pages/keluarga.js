@@ -26,16 +26,20 @@ const Keluarga = () => {
     <Layout>
       <SEO title="Keluarga Royah" />
       <PageHeader title="Keluarga Royah" />
-      {nodeList.map(({ node }) => {
-        return (
-          <div>
-            <Link to={`/${node.fields.slug}`}>&gt; {node.name}</Link>
-          </div>
-        )
-      })}
-      <Link to="/">
-        <p>&lt; kembali</p>
-      </Link>
+      <div className="mx-auto">
+        <div className="w-11/12 flex flex-wrap justify-center lg:px-5 mx-auto">
+          {nodeList.map(({ node }) => {
+            return (
+              <div className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 flex flex-wrap justify-center my-6 hover:shadow-md rounded-xl p-4">
+                <Link to={`/${node.fields.slug}`} className="text-center">
+                  <div className="rounded-3xl bg-gray-200 h-32 w-32 mx-auto mb-4"></div>
+                  {node.name}
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </Layout>
   )
 }
