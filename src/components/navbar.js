@@ -28,7 +28,7 @@ const Navbar = () => {
                     to="/yearbook"
                     className=" px-3 py-2 rounded-md  text-lg no-underline"
                   >
-                    <h1>year book</h1>
+                    <h1>yearbook</h1>
                   </Link>
 
                   <Link
@@ -102,19 +102,22 @@ const Navbar = () => {
               className="md:hidden bg-white dark:bg-gray-900 shadow "
               id="mobile-menu"
             >
-              <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <div
+                ref={ref}
+                className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-bold"
+              >
                 <Link
-                  to="/blog"
+                  to="/yearbook"
                   className="block px-3 py-2 rounded-md text-lg no-underline"
                 >
-                  Blog
+                  <h1>yearbook</h1>
                 </Link>
 
                 <Link
-                  to="/reads"
+                  to="/keluarga"
                   className="block px-3 py-2 rounded-md text-lg no-underline"
                 >
-                  Reading List
+                  <h1>keluarga</h1>
                 </Link>
               </div>
             </div>
