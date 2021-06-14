@@ -2,6 +2,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PageHeader from "../components/pageheader"
 
 const Keluarga = () => {
   const data = useStaticQuery(graphql`
@@ -24,7 +25,7 @@ const Keluarga = () => {
   return (
     <Layout>
       <SEO title="Keluarga Royah" />
-      <h1>Keluarga Royah</h1>
+      <PageHeader title="Keluarga Royah" />
       {nodeList.map(({ node }) => {
         return (
           <div>
