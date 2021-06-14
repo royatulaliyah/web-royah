@@ -26,6 +26,13 @@ const Keluarga = () => {
     <Layout>
       <SEO title="Keluarga Royah" />
       <PageHeader title="Keluarga Royah" />
+      <div className="mx-auto text-center max-w-screen-sm px-10">
+        <input
+          type="text"
+          placeholder="cari berdasarkan nama atau absen"
+          className="px-4 py-2 w-full text-center mb-8 shadow rounded-lg focus:outline-none focus:ring-2 focus:border-transparent"
+        />
+      </div>
       <div className="mx-auto">
         <div className="w-11/12 flex flex-wrap justify-center lg:px-5 mx-auto">
           {nodeList.map(({ node }) => {
