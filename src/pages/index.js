@@ -1,9 +1,7 @@
 import * as React from "react"
-import Footer from "../components/footer"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import illustration from "../images/teamwork.png"
-import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout>

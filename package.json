@@ -10,6 +10,7 @@
     "@headlessui/react": "^1.2.0",
     "@react-icons/all-files": "^4.1.0",
     "gatsby": "^3.0.1",
+    "gatsby-image": "^3.7.1",
     "gatsby-plugin-gatsby-cloud": "^2.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
