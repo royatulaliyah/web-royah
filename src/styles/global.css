@@ -14,3 +14,15 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
 }
+
+.card-zoom {
+  @apply relative flex items-center justify-center overflow-hidden h-32 w-32;
+}
+
+.card-zoom-image {
+  @apply absolute w-full h-full transition-all duration-300 ease-in-out transform bg-top bg-cover -rotate-1;
+}
+
+.card-zoom:hover .card-zoom-image {
+  @apply scale-125 rotate-1;
+}
