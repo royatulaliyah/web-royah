@@ -12,6 +12,7 @@ const Keluarga = () => {
         edges {
           node {
             name
+            nickname
             absen
             fields {
               slug
@@ -59,7 +60,9 @@ const Keluarga = () => {
                       }}
                     ></div>
                   </div>
-                  <div className="w-32 mx-auto mt-2">{node.name}</div>
+                  <div className="w-32 mx-auto mt-2">
+                    {node.nickname ? node.nickname : node.name}
+                  </div>
                 </Link>
               </div>
             )
