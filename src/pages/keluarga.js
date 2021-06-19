@@ -46,11 +46,11 @@ const Keluarga = () => {
           <FaFilter />
         </button>
       </div>
-      <div className="mx-auto">
-        <div className="w-11/12 flex flex-wrap justify-center lg:px-5 mx-auto">
+      <div className="mx-auto md:w-11/12 lg:w-10/12">
+        <div className="flex flex-wrap justify-center lg:px-5 mx-auto">
           {nodeList.map(({ node }) => {
             return (
-              <div className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 flex flex-wrap justify-center my-6 p-2 rounded-xl">
+              <div className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 flex flex-wrap justify-center my-6 p-2 rounded-xl">
                 <Link to={`/${node.fields.slug}`} className="text-center">
                   <div className="card-zoom mx-auto rounded-3xl shadow">
                     <div
