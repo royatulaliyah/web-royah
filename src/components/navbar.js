@@ -7,7 +7,7 @@ const NavLink = ({ to, text }) => {
   return (
     <Link
       to={to}
-      className="mx-3 pt-1 text-lg no-underline border-b-2 border-transparent"
+      className="mx-3 text-lg no-underline border-b-2 border-transparent font-bold"
       activeClassName="border-royah-yellow"
     >
       <h1>{text}</h1>
@@ -19,7 +19,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div>
-      <nav className="fixed w-full z-50 bg-white bg-opacity-75 text-gray-900 shadow backdrop-filter backdrop-blur-md">
+      <nav
+        className={`fixed w-full z-50 bg-white bg-opacity-75 text-gray-900 shadow backdrop-filter backdrop-blur-md ${
+          isOpen ? "rounded-b-xl lg:rounded-none" : "rounded-none"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
@@ -34,18 +38,18 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center justify-end">
-              <div className="hidden md:block mr-4">
-                <div className="ml-10 flex items-baseline space-x-4 font-bold">
+              <div className="hidden lg:block mr-4">
+                <div className="ml-10 flex items-baseline space-x-4">
                   <NavLink to="/yearbook" text="yearbook" />
                   <NavLink to="/keluarga" text="keluarga" />
                 </div>
               </div>
 
-              <div className="-mr-2 flex items-center md:hidden">
+              <div className="-mr-2 flex items-center lg:hidden">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
-                  className="inline-flex items-center ml-2 justify-center p-2 rounded-md text-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="inline-flex items-center ml-2 justify-center p-2 rounded-md text-gray-800 focus:outline-none"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
@@ -91,24 +95,35 @@ const Navbar = () => {
 
         <Transition
           show={isOpen}
-          enter="transition ease-in duration-100 transform"
+          className="px-8 lg:hidden"
+          id="mobile-menu"
+          enter="transition ease-out duration-200 transform"
           enterFrom="opacity-0 scale-50"
           enterTo="opacity-100 scale-100"
           leave="transition ease-in duration-75 transform"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          {ref => (
-            <div className="md:hidden shadow" id="mobile-menu">
-              <div
-                ref={ref}
-                className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-bold"
-              >
-                <NavLink to="/yearbook" text="yearbook" />
-                <NavLink to="/keluarga" text="keluarga" />
-              </div>
-            </div>
-          )}
+          {/* <Transition.Child
+            enter="transition ease-out duration-500 transform"
+            enterFrom="opacity-0 scale-50"
+            enterTo="opacity-100 scale-100"
+            leave="transition ease-in duration-75 transform"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          > */}
+          <NavLink to="/yearbook" text="yearbook" />
+          {/* </Transition.Child>
+          <Transition.Child
+            enter="transition ease-out duration-500 transform delay-100"
+            enterFrom="opacity-0 scale-50"
+            enterTo="opacity-100 scale-100"
+            leave="transition ease-in duration-75 transform"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          > */}
+          <NavLink to="/keluarga" text="keluarga" />
+          {/* </Transition.Child> */}
         </Transition>
       </nav>
     </div>
