@@ -30,17 +30,29 @@ exports.createPages = async ({ graphql, actions }) => {
               slug
             }
           }
+          next {
+            fields {
+              slug
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+          }
         }
       }
     }
   `)
 
-  res.data.allPeopleCsv.edges.forEach(person => {
+  res.data.allPeopleCsv.edges.forEach(({ node, next, previous }) => {
     createPage({
       component: peopleTemplate,
-      path: `/${person.node.fields.slug}`,
+      path: `/${node.fields.slug}`,
       context: {
-        slug: person.node.fields.slug,
+        slug: node.fields.slug,
+        next,
+        previous,
       },
     })
   })
