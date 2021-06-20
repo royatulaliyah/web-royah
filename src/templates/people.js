@@ -75,7 +75,7 @@ const People = props => {
             <ImageContainer>
               <GatsbyImage
                 image={image}
-                className="w-full sm:w-56 lg:w-60 xl:w-72 rounded-lg"
+                className="w-full sm:w-56 lg:w-60 xl:w-72 rounded-lg img-container"
               />
             </ImageContainer>
 

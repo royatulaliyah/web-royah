@@ -26,3 +26,16 @@ h6 {
 .card-zoom:hover .card-zoom-image {
   @apply scale-125 rotate-1;
 }
+.img-container {
+  position: relative;
+}
+
+.img-container:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
