@@ -32,7 +32,7 @@ const Navbar = () => {
                 className="py-2 flex rounded-md text-lg no-underline items-center"
               >
                 <img src={LogoNav} alt="logo" className="h-12 w-12" />
-                <h1 className="font-bold text-xl text-black sm:ml-2 tracking-tight">
+                <h1 className="font-bold text-xl text-black ml-2 tracking-tight">
                   Royatul<span className="text-royah-yellow">Aliyah</span>
                 </h1>
               </Link>
