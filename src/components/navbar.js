@@ -104,26 +104,8 @@ const Navbar = () => {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          {/* <Transition.Child
-            enter="transition ease-out duration-500 transform"
-            enterFrom="opacity-0 scale-50"
-            enterTo="opacity-100 scale-100"
-            leave="transition ease-in duration-75 transform"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          > */}
           <NavLink to="/yearbook" text="yearbook" />
-          {/* </Transition.Child>
-          <Transition.Child
-            enter="transition ease-out duration-500 transform delay-100"
-            enterFrom="opacity-0 scale-50"
-            enterTo="opacity-100 scale-100"
-            leave="transition ease-in duration-75 transform"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          > */}
           <NavLink to="/keluarga" text="keluarga" />
-          {/* </Transition.Child> */}
         </Transition>
       </nav>
     </div>
