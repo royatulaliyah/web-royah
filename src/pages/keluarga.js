@@ -8,7 +8,7 @@ import { debounce, throttle } from "throttle-debounce"
 
 const Keluarga = () => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       allPeopleCsv {
         edges {
           node {
@@ -21,9 +21,13 @@ const Keluarga = () => {
             gender
             photo {
               childImageSharp {
-                fixed(width: 256, height: 256, cropFocus: NORTH, quality: 75) {
-                  ...GatsbyImageSharpFixed
-                }
+                gatsbyImageData(
+                  width: 256
+                  height: 256
+                  quality: 75
+                  transformOptions: { cropFocus: NORTH }
+                  layout: FIXED
+                )
               }
             }
           }
@@ -33,7 +37,6 @@ const Keluarga = () => {
   `)
   const nodeList = data.allPeopleCsv.edges
   const [search, setSearch] = React.useState("")
-
   return (
     <Layout>
       <SEO title="Keluarga Royah" />
@@ -74,7 +77,7 @@ const Keluarga = () => {
                       <div
                         className="card-zoom-image rounded-3xl mx-auto"
                         style={{
-                          backgroundImage: `url(${node.photo.childImageSharp.fixed.src})`,
+                          backgroundImage: `url(${node.photo.childImageSharp.gatsbyImageData.images.fallback.src})`,
                         }}
                       ></div>
                     </div>
