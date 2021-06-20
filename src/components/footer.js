@@ -5,7 +5,7 @@ import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 
-const FooterContainer = tw.div`text-gray-800 container flex flex-col items-center px-8 py-8 sm:flex-row min-w-full`
+const FooterContainer = tw.div`text-gray-800 container flex flex-col items-center px-8 py-8 sm:flex-row min-w-full bg-white pt-10`
 const RoyahLogoContainer = tw.div`text-xl font-bold tracking-tight leading-none text-gray-900 select-none tracking-tighter`
 const CopyrightContainer = tw.div`mt-4 text-sm text-gray-700 hover:text-gray-800 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-500 sm:mt-0`
 const AccountsContainer = tw.div`inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start`

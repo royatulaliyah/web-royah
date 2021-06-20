@@ -3,11 +3,27 @@ import { Transition } from "@headlessui/react"
 import { Link } from "gatsby"
 import LogoNav from "../images/logonav.svg"
 
+const NavLink = ({ to, text }) => {
+  return (
+    <Link
+      to={to}
+      className="mx-3 text-lg no-underline border-b-2 border-transparent font-bold"
+      activeClassName="border-royah-yellow"
+    >
+      <h1>{text}</h1>
+    </Link>
+  )
+}
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <div>
-      <nav className="fixed w-full z-50 bg-white text-gray-900 dark:text-white dark:bg-gray-900 shadow">
+      <nav
+        className={`fixed w-full z-50 bg-white bg-opacity-75 text-gray-900 shadow backdrop-filter backdrop-blur-md ${
+          isOpen ? "rounded-b-xl lg:rounded-none" : "rounded-none"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
@@ -16,35 +32,24 @@ const Navbar = () => {
                 className="py-2 flex rounded-md text-lg no-underline items-center"
               >
                 <img src={LogoNav} alt="logo" className="h-12 w-12" />
-                <h1 className="font-bold text-xl text-black sm:ml-2 tracking-tight">
+                <h1 className="font-bold text-xl text-black ml-2 tracking-tight">
                   Royatul<span className="text-royah-yellow">Aliyah</span>
                 </h1>
               </Link>
             </div>
             <div className="flex items-center justify-end">
-              <div className="hidden md:block mr-4">
-                <div className="ml-10 flex items-baseline space-x-4 font-bold">
-                  <Link
-                    to="/yearbook"
-                    className=" px-3 py-2 rounded-md  text-lg no-underline"
-                  >
-                    <h1>yearbook</h1>
-                  </Link>
-
-                  <Link
-                    to="/keluarga"
-                    className=" px-3 py-2 rounded-md text-lg no-underline"
-                  >
-                    <h1>keluarga</h1>
-                  </Link>
+              <div className="hidden lg:block mr-4">
+                <div className="ml-10 flex items-baseline space-x-4">
+                  <NavLink to="/yearbook" text="yearbook" />
+                  <NavLink to="/keluarga" text="keluarga" />
                 </div>
               </div>
 
-              <div className="-mr-2 flex bg-white items-center dark:bg-gray-900 md:hidden">
+              <div className="-mr-2 flex items-center lg:hidden">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   type="button"
-                  className="inline-flex items-center ml-2 justify-center p-2 rounded-md text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                  className="inline-flex items-center ml-2 justify-center p-2 rounded-md text-gray-800 focus:outline-none"
                   aria-controls="mobile-menu"
                   aria-expanded="false"
                 >
@@ -90,38 +95,17 @@ const Navbar = () => {
 
         <Transition
           show={isOpen}
-          enter="transition ease-out duration-100 transform"
-          enterFrom="opacity-0 scale-95"
+          className="px-8 lg:hidden"
+          id="mobile-menu"
+          enter="transition ease-out duration-200 transform"
+          enterFrom="opacity-0 scale-50"
           enterTo="opacity-100 scale-100"
           leave="transition ease-in duration-75 transform"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          {ref => (
-            <div
-              className="md:hidden bg-white dark:bg-gray-900 shadow "
-              id="mobile-menu"
-            >
-              <div
-                ref={ref}
-                className="px-2 pt-2 pb-3 space-y-1 sm:px-3 font-bold"
-              >
-                <Link
-                  to="/yearbook"
-                  className="block px-3 py-2 rounded-md text-lg no-underline"
-                >
-                  <h1>yearbook</h1>
-                </Link>
-
-                <Link
-                  to="/keluarga"
-                  className="block px-3 py-2 rounded-md text-lg no-underline"
-                >
-                  <h1>keluarga</h1>
-                </Link>
-              </div>
-            </div>
-          )}
+          <NavLink to="/yearbook" text="yearbook" />
+          <NavLink to="/keluarga" text="keluarga" />
         </Transition>
       </nav>
     </div>
