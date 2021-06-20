@@ -62,15 +62,14 @@ const People = props => {
         <PageHeader title={data.name} />
 
         <OuterContainer>
-          <GatsbyImage
-            image={image}
-            alt={data.name}
-            className="w-screen fixed top-0 filter blur"
+          <div
+            className="w-screen h-screen top-0 fixed filter blur"
             style={{
               zIndex: -10,
-              height: "100vh",
             }}
-          />
+          >
+            <GatsbyImage image={image} alt={data.name} className="h-full" />
+          </div>
 
           <InnerContainer>
             <ImageContainer>
