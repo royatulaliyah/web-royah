@@ -2,8 +2,9 @@ import { graphql, Link } from "gatsby"
 import * as React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { FaSchool } from "@react-icons/all-files/fa/FaSchool"
+import { FaUserGraduate } from "@react-icons/all-files/fa/FaUserGraduate"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
+import { FaBirthdayCake } from "@react-icons/all-files/fa/FaBirthdayCake"
 import { FaQuoteLeft } from "@react-icons/all-files/fa/FaQuoteLeft"
 import { FaQuoteRight } from "@react-icons/all-files/fa/FaQuoteRight"
 import { GiKite } from "@react-icons/all-files/gi/GiKite"
@@ -63,7 +64,7 @@ const People = props => {
 
         <OuterContainer>
           <div
-            className="w-screen h-screen top-0 fixed filter blur"
+            className="w-screen h-screen top-0 fixed filter blur-md"
             style={{
               zIndex: -10,
             }}
@@ -84,9 +85,15 @@ const People = props => {
                 <TableBody>
                   <TableRow>
                     <TableLeftColumn>
-                      <FaSchool />
+                      <FaBirthdayCake />
                     </TableLeftColumn>
+                    <TableRightColumn>no data</TableRightColumn>
+                  </TableRow>
 
+                  <TableRow>
+                    <TableLeftColumn>
+                      <FaUserGraduate />
+                    </TableLeftColumn>
                     <TableRightColumn>
                       {data.school
                         ? `${data.school} - ${data.major}`
@@ -98,9 +105,19 @@ const People = props => {
                     <TableLeftColumn>
                       <FaInstagram />
                     </TableLeftColumn>
-
                     <TableRightColumn>
-                      {data.instagram ? data.instagram : "no data"}
+                      {data.instagram ? (
+                        <a
+                          href={`http://instagram.com/${data.instagram}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:bg-royah-jellyfish"
+                        >
+                          {data.instagram}
+                        </a>
+                      ) : (
+                        "no data"
+                      )}
                     </TableRightColumn>
                   </TableRow>
 
@@ -108,7 +125,6 @@ const People = props => {
                     <TableLeftColumn>
                       <GiKite />
                     </TableLeftColumn>
-
                     <TableRightColumn>
                       {data.interests ? data.interests : "no data"}
                     </TableRightColumn>
