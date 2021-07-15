@@ -6,6 +6,7 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight"
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { FaBirthdayCake } from "@react-icons/all-files/fa/FaBirthdayCake"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 export const query = graphql`
   query($slug: String!) {
@@ -51,7 +52,7 @@ const AboutPage = ({ data, pageContext }) => {
         style={{ zIndex: -8 }}
       />
 
-      <div className="flex" style={{ minHeight: "90vh" }}>
+      <div className="flex">
         <div className="mx-8 w-12 h-screen bg-royah-red border-l-2 border-r-2 border-black hidden lg:block relative" />
 
         <div className="p-4 lg:pt-12 lg:pl-12 lg:pb-4 lg:pr-24 max-w-screen-xl flex-1">
@@ -115,7 +116,7 @@ const AboutPage = ({ data, pageContext }) => {
               </div>
             </div>
             <div
-              className="w-full italic text-lg text-white h-28  p-2 flex justify-center items-center text-center bg-royah-red md:bg-green-900 border-2 border-black"
+              className="w-full italic text-lg text-white px-4 py-8 mb-24 flex justify-center items-center text-center bg-green-900 border-2 border-black"
               style={{ zIndex: -7 }}
             >
               {person.quotes ? `"${person.quotes}"` : "not available"}
@@ -123,25 +124,35 @@ const AboutPage = ({ data, pageContext }) => {
           </div>
         </div>
       </div>
-      <div className="flex py-4 px-4 justify-between sticky bottom-0 lg:pl-40 lg:pr-24 bg-royah-yellow border-t-2 border-black ">
-        <Link
+      <div className="flex py-4 px-4 justify-between fixed w-screen bottom-0 lg:pl-40 lg:pr-24 bg-royah-yellow border-t-2 border-black ">
+        <AniLink
+          cover
+          bg="#DB2929"
+          duration={1}
+          direction="left"
           to={prevLink ? `/${prevLink.fields.slug}` : null}
           className="h-10 w-10 border-2 bg-white border-black flex justify-center items-center shadow-offset-black-2"
         >
           <FaArrowLeft />
-        </Link>
-        <Link
+        </AniLink>
+        <AniLink
+          paintDrip
+          hex="#F5BA16"
           to="/keluarga"
           className="h-10 px-4 border-2 bg-white border-black flex justify-center items-center text-lg font-medium shadow-offset-black-2"
         >
           KEMBALI
-        </Link>
-        <Link
+        </AniLink>
+        <AniLink
+          cover
+          bg="#DB2929"
+          duration={1}
+          direction="right"
           to={nextLink ? `/${nextLink.fields.slug}` : null}
           className="h-10 w-10 border-2 bg-white border-black flex justify-center items-center shadow-offset-black-2"
         >
           <FaArrowRight />
-        </Link>
+        </AniLink>
       </div>
     </div>
   )
