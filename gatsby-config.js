@@ -37,7 +37,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    `gatsby-plugin-offline`,
+    //`gatsby-plugin-offline`,
     "gatsby-plugin-postcss",
     `gatsby-plugin-netlify`,
     `gatsby-plugin-transition-link`,
