@@ -40,6 +40,7 @@ module.exports = {
     `gatsby-plugin-offline`,
     "gatsby-plugin-postcss",
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

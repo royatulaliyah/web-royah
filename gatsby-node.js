@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const peopleTemplate = path.resolve("./src/templates/people.js")
+  const peopleTemplate = path.resolve("./src/templates/about.js")
 
   const res = await graphql(`
     query AllPeople {

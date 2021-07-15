@@ -6,6 +6,11 @@ module.exports = {
       colors: {
         "royah-yellow": "#F5BA16",
         "royah-jellyfish": "#4DC8C6",
+        "royah-red": "#DB2929",
+      },
+      boxShadow: {
+        "offset-black-2": "2px 2px black",
+        "offset-black-1": "1px 1px black",
       },
     },
   },
